@@ -1,0 +1,29 @@
+
+ATT:
+facetime
+uplink:
+med: 56, 95th: 1325
+downlink:
+med: 35, 95th: 578
+
+ctcp:
+uplink:
+med: 287, 95th: 1423
+downlink:
+med: 52, 95th: 357
+
+cubic-codel
+uplink:
+med: 67, 95th: 512
+downlink:
+med: 52, 95th: 267
+
+hangouts:
+uplink:
+med: 42, 95th: 707
+downlink:
+med: 29, 95th: 104
+
+
+med: 52, 95th: 1445
+med: 33, 95th: 394

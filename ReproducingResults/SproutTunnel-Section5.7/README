@@ -1,0 +1,46 @@
+There are two folders here :
+====================================
+One "SproutWithAQM" measures the scenario where Sprout tunnels Skype+TCP traffic between a client and a relay with per protocol queuing and AQM at both the client and the relay.
+
+The other "Statusquo"  measures the scenario where both Skype and TCP compete over an unchanged Verizon 4G link. The traffic end points, for consistency, are called client and relay in this case as well. We measure this scenario using cellsim with the Verizon 4G trace as input. 
+
+Each folder has three files :
+===================================
+
+wget.txt :
+-----------------------------------
+
+Throughput of TCP connection running through the SproutTunnel in Kilobytes per second as obtained from wget.
+wget reports the number of bytes transferred and we divide it by (end_time-start_time).
+
+client.out and relay.out files :
+-----------------------------------
+
+Logs the entry and exit of Skype Packets at the client and the relay.
+Packets that are "RECEIVED IN" in the client file and "SENT OUT" in the relay file are uplink packets.
+Similarly packets that are "RECEIVED IN" in the relay file and "SENT OUT" in the client file are downlink packets.
+
+To match up packets between the client and relay files,  we use the hash provided at the end of each line. 
+The hash is simply the last 64 bytes of each Skype packet. 
+We distinguish Skype packets by looking for UDP in the protocol field of the IP header.
+
+process-skype-traces.py does the matching up process. It also takes as input the start and end times, which are the 
+start and end times in wget.txt (marking the beginning of the TCP transfer).
+
+The starting and ending times are important, since they let us measure simultaneous TCP and UDP throughput.
+
+To run process-skype-traces.py :
+-----------------------------------
+
+In either folder run :
+
+python  ../process-skype-traces.py  skype-tcp-fixed-time-client.out skype-tcp-fixed-time-relay.out start_time end_time  95 > /dev/null
+
+where start_time and end_time are taken from wget.
+
+This gives the numbers in Section 5.7. 
+
+NB:
+---------------------------------------
+Note that the delay numbers are the 95th percentile per packet delay stats and not 95% end-to-end delay stats (as reported in Figures 7,8 and Section 5.6).
+Even though Skype runs bidirectionally, we only report the numbers from the Downlink, because the TCP transfer was only in the downlink direction.

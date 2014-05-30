@@ -1,0 +1,50 @@
+ctcp-tmobile-sep17
+uplink:
+med: 198, 95th: 1104
+downlink:
+med: 82, 95th: 1876
+cubic-codel-tmobile-sep17
+uplink:
+med: 61, 95th: 854
+downlink:
+med: 54, 95th: 793
+hangouts-tmobile-sep17
+uplink:
+med: 35, 95th: 1413
+downlink:
+med: 34, 95th: 2481
+skype-tmobile-sep17
+uplink:
+med: 43, 95th: 1039
+downlink:
+med: 38, 95th: 1988
+sproutbt2-ewma-tmobile-sep17
+uplink:
+med: 69, 95th: 530
+downlink:
+med: 60, 95th: 891
+cubic-tmobile-sep17
+uplink:
+med: 14198, 95th: 32918
+downlink:
+med: 74, 95th: 8754
+facetime-tmobile-sep17
+uplink:
+med: 44, 95th: 2195
+downlink:
+med: 42, 95th: 3047
+libutp-tmobile-sep17
+uplink:
+med: 211, 95th: 2053
+downlink:
+med: 60, 95th: 973
+sproutbt2-tmobile-sep17
+uplink:
+med: 52, 95th: 414
+downlink:
+med: 50, 95th: 735
+vegas-tmobile-sep17
+uplink:
+med: 63, 95th: 829
+downlink:
+med: 47, 95th: 903

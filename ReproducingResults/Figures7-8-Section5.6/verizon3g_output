@@ -1,0 +1,50 @@
+ctcp-verizon3g-sep17
+uplink:
+med: 132, 95th: 1263
+downlink:
+med: 544, 95th: 6409
+cubic-codel-verizon3g-sep17
+uplink:
+med: 101, 95th: 1463
+downlink:
+med: 118, 95th: 1629
+hangouts-verizon3g-sep17
+uplink:
+med: 42, 95th: 2449
+downlink:
+med: 79, 95th: 10185
+skype-verizon3g-sep17
+uplink:
+med: 48, 95th: 4895
+downlink:
+med: 77, 95th: 4945
+sproutbt2-ewma-verizon3g-sep17
+uplink:
+med: 82, 95th: 843
+downlink:
+med: 141, 95th: 2519
+cubic-verizon3g-sep17
+uplink:
+med: 202, 95th: 12867
+downlink:
+med: 23765, 95th: 98542
+facetime-verizon3g-sep17
+uplink:
+med: 53, 95th: 3759
+downlink:
+med: 101, 95th: 8955
+libutp-verizon3g-sep17
+uplink:
+med: 143, 95th: 1741
+downlink:
+med: 239, 95th: 2298
+sproutbt2-verizon3g-sep17
+uplink:
+med: 58, 95th: 687
+downlink:
+med: 87, 95th: 2198
+vegas-verizon3g-sep17
+uplink:
+med: 92, 95th: 1482
+downlink:
+med: 138, 95th: 2682

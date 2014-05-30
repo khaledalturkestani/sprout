@@ -1,0 +1,50 @@
+ctcp-verizon4g-sep17
+uplink:
+med: 63, 95th: 1980
+downlink:
+med: 54, 95th: 441
+cubic-codel-verizon4g-sep17
+uplink:
+med: 38, 95th: 772
+downlink:
+med: 37, 95th: 321
+hangouts-verizon4g-sep17
+uplink:
+med: 30, 95th: 3065
+downlink:
+med: 27, 95th: 456
+skype-verizon4g-sep17
+uplink:
+med: 33, 95th: 6827
+downlink:
+med: 32, 95th: 1252
+sproutbt2-ewma-verizon4g-sep17
+uplink:
+med: 64, 95th: 983
+downlink:
+med: 58, 95th: 300
+cubic-verizon4g-sep17
+uplink:
+med: 1334, 95th: 13262
+downlink:
+med: 953, 95th: 7660
+facetime-verizon4g-sep17
+uplink:
+med: 36, 95th: 3672
+downlink:
+med: 35, 95th: 1713
+libutp-verizon4g-sep17
+uplink:
+med: 35, 95th: 878
+downlink:
+med: 34, 95th: 405
+sproutbt2-verizon4g-sep17
+uplink:
+med: 43, 95th: 535
+downlink:
+med: 41, 95th: 165
+vegas-verizon4g-sep17
+uplink:
+med: 35, 95th: 928
+downlink:
+med: 34, 95th: 307

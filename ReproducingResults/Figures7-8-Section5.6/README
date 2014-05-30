@@ -1,0 +1,90 @@
+This is the set of results which make up Figures 7 and 8 of the paper and the table in Section 5.6.
+The files log packet deliveries on both the uplink and the downlink for each protocol that was tested.
+
+FILE FORMAT :
+================================================================
+
+The file format is :
+
+<protocolName>-<providerName>-sep17. 
+Sep 17 is the date on which the traces were collected.
+
+FIGURES 7 and 8:
+=================================================================
+The correspondence between protocolName and the labels in Figure 7 and 8 is :
+
+cubic : Cubic
+libutp: LEDBAT
+vegas : Vegas
+ctcp  : Compound TCP
+cubic-codel : Cubic-CoDel (Figure 8 of the paper) Cubic-CoDel refers to TCP CUBIC in Linux with CoDel in the base station (implemented in cellsim, code available at : https://anirudhSK/github.com/cell-codel )
+facetime: Facetime
+hangouts: Google Hangout
+skype: Skype
+sproutbt2: Sprout
+sprout-ewma: Sprout-EWMA
+
+SECTION 5.6:
+=================================================================
+The files  :
+
+sproutbt2-10percentloss-verizon4g-sep17
+sproutbt2-5percentloss-verizon4g-sep17
+
+were used to generate the results in Section 5.6 measuring Sprout's loss resilience to 5% and 10% stochastic loss.
+
+REPRODUCING RESULTS:
+==================================================================
+To reproduce the results on either Figures 7 and 8 or Section 5.6, first download these two scripts (availble in the alfalfa repository )
+    
+scorer :  https://raw.github.com/keithw/alfalfa/master/src/examples/scorer
+quantiles : https://raw.github.com/keithw/alfalfa/master/src/examples/quantiles
+    
+95% end-to-end delay for a particular protocol
+------------------------------------------------------------------
+
+Then, run the following on a Linux command line for each trace:
+
+cat <fileName> | ./scorer uplink | ./quantiles
+cat <fileName> | ./scorer downlink | ./quantiles
+
+to get the 95% end-to-end delay and throughput in kbps for the uplink and the downlink respectively.
+
+Calculating the minimum 95% end-to-end delay for a particular trace
+------------------------------------------------------------------
+
+The minimum 95% end-to-end delay is a property specific to a given cellular network trace.
+To compute it, take the corresponding input trace (available as .rx files at http://alfalfa.mit.edu/data/cleaned_traces.zip).
+
+The trace will have absolute UNIX timestamps in nanoseconds of the form 136....
+Convert these into relative timestamps in seconds since the beginning of the trace.
+After this conversion, you should have a file that describes packet delivery times in seconds relative to the beginning of the trace.
+
+To simulate an oracular zero delay, 100% throughput protocol on this trace, simply replace each timestamp "t" with :
+
+downlink t delivery 20
+
+or
+
+uplink t delivery 20
+
+depending on whether the trace is an uplink trace or a downlink trace.
+
+This replacement simulates a protocol which delivers packets exactly according to the schedule given in the trace, but with a fixed minimum delay of 20 ms per packet.
+In other words, this "oracular protocol" achives 100% throughput at no additional delay.
+
+Now, run either :
+
+cat <fileName> | ./scorer uplink | ./quantiles
+or 
+cat <fileName> | ./scorer downlink | ./quantiles
+
+as the case may be.
+
+This gives us the minimum 95% end to end delay say M for a particular cellular network trace.
+Ignore the message, "Illegal division by zero at ../../scorer line 51,"
+
+Self Inflicted 95% end-to-end delay
+------------------------------------------------------------------
+
+Subtracting M from the end-to-end 95% delays computed earlier gives us the 95% end-to-end self-inflicted delays. These are the numbers plotted on the graphs.

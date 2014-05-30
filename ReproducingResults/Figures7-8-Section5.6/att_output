@@ -1,0 +1,50 @@
+ctcp-att-sep17
+uplink:
+med: 287, 95th: 1423
+downlink:
+med: 52, 95th: 357
+cubic-codel-att-sep17
+uplink:
+med: 67, 95th: 512
+downlink:
+med: 52, 95th: 267
+hangouts-att-sep17
+uplink:
+med: 42, 95th: 707
+downlink:
+med: 29, 95th: 104
+skype-att-sep17
+uplink:
+med: 52, 95th: 1445
+downlink:
+med: 33, 95th: 394
+sproutbt2-ewma-att-sep17
+uplink:
+med: 103, 95th: 537
+downlink:
+med: 55, 95th: 230
+cubic-att-sep17
+uplink:
+med: 15613, 95th: 24449
+downlink:
+med: 54, 95th: 5495
+facetime-att-sep17
+uplink:
+med: 56, 95th: 1325
+downlink:
+med: 35, 95th: 578
+libutp-att-sep17
+uplink:
+med: 198, 95th: 1064
+downlink:
+med: 46, 95th: 323
+sproutbt2-att-sep17
+uplink:
+med: 61, 95th: 314
+downlink:
+med: 43, 95th: 121
+vegas-att-sep17
+uplink:
+med: 72, 95th: 561
+downlink:
+med: 44, 95th: 266

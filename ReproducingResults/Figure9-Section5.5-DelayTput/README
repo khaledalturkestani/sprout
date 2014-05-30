@@ -1,0 +1,5 @@
+These files generate the results in Section 5.5, Figure 9 showing the effect of the confidence parameter.
+We  vary the confidence interval of Sprout from 95% (the default) down to 5%. All other Sprout parameters are unchanged.
+The results reported are for the TMobile 3G uplink.
+
+To reproduce the result follow the same instructions as the ones in  Figures7-8-Section5.6/README.
